@@ -131,18 +131,9 @@ router.get('/cabinet/:login', function (req, res){
       }).catch(err=>console.log(err));
 });
 
-
-
 router.get('/user/:login', function(req, res) {
-  res.send('This is not implemented now');
+  res.send('This is not implemented yet');
 });
 
-router.post('/api/articles', function(req, res) {
-  res.send('This is not implemented now');
-});
-
-router.delete('/api/articles/:id', function (req, res){
-  res.send('This is not implemented now');
-});
 
 module.exports = router;
