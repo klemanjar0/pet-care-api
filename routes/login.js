@@ -92,13 +92,13 @@ router.post('/', (req, res) => {
 router.get('/me', passport.authenticate('jwt', {session: false}), async function(req, res, next) {
     const username = "klemanjar0";
     console.log(username);
-    db.userDatabase.findOne({where: {login: username} }).then(data=>{
+    await db.userDatabase.findOne({where: {login: username} }).then(data=>{
         res.status(200).json(data);
     });
 });
-router.get('/user/:login', auth, function(req, res) {
+router.get('/user/:login',  async function(req, res) {
     const username = req.params.login;
-    db.userDatabase.findOne({where: {login: username} }).then(data=>{
+    await db.userDatabase.findOne({where: {login: username} }).then(data=>{
         res.status(200).json(data);
     });
 });

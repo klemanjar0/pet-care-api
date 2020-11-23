@@ -45,6 +45,87 @@ var userDatabase = sequelize.define('users', {
     timestamps: true // Колонки createdAt и updatedAt будут созданы автоматически
 });
 
+var petDatabase = sequelize.define('pets', {
+    idPet: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER
+    },
+    idUser: {
+        allowNull: false,
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'users', // 'persons' refers to table name
+            key: 'idUser', // 'id' refers to column name in persons table
+        }
+    },
+    name: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    birthday: {
+        type: DataTypes.DATE,
+        allowNull: true,
+    },
+    height: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+    },
+    species: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    }
+}, {
+    timestamps: true // Колонки createdAt и updatedAt будут созданы автоматически
+});
+
+var sampleDatabase = sequelize.define('samples', {
+    idSample: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER
+    },
+    idPet: {
+        allowNull: false,
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'pets', // 'persons' refers to table name
+            key: 'idPet', // 'id' refers to column name in persons table
+        }
+    },
+    pulse_avg: {
+        type: DataTypes.INTEGER,
+        allowNull: true
+    },
+    distance_travel: {
+        type: DataTypes.DOUBLE,
+        allowNull: true,
+    },
+    calories_burnt: {
+        type: DataTypes.DOUBLE,
+        allowNull: true,
+    },
+    weight: {
+        type: DataTypes.DOUBLE,
+        allowNull: true,
+    },
+    start_time_measure: {
+        type: DataTypes.DATE,
+        allowNull: true,
+    },
+    end_time_measure: {
+        type: DataTypes.DATE,
+        allowNull: true,
+    }
+}, {
+    timestamps: false // Колонки createdAt и updatedAt будут созданы автоматически
+});
+userDatabase.hasOne(petDatabase, { foreignKey: 'idUser', foreignKeyConstraint: true })
+petDatabase.hasOne(sampleDatabase, { foreignKey: 'idPet', foreignKeyConstraint: true })
+
+
 sequelize
     .sync({ force: doDropTable })
     .then(function(err) {
@@ -65,3 +146,5 @@ module.exports.getUser = function(login) {
 }
 
 module.exports.userDatabase = userDatabase;
+module.exports.petDatabase = petDatabase;
+module.exports.sampleDatabase = sampleDatabase;

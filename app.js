@@ -20,6 +20,7 @@ const config = require('./config')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
+var petsRouter = require('./routes/pets');
 
 var app = express();
 var jsonParser = bodyParser.json();
@@ -48,5 +49,5 @@ app.set("view engine", "hbs");
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', loginRouter);
-
+app.use('/pets', petsRouter);
 module.exports = app;
