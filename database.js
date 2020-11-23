@@ -53,4 +53,15 @@ sequelize
         console.log('An error occurred while creating the table:', err);
     });
 
+module.exports.getUser = function(login) {
+    return new Promise((resolve, reject)=>{
+        let userLogin = login;
+        userDatabase.findAll({where:{login: userLogin}, raw: true })
+            .then(users=>{
+                resolve(users);
+                console.log(users);
+            }).catch(err=>reject(err));
+    })
+}
+
 module.exports.userDatabase = userDatabase;

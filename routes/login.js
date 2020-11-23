@@ -1,63 +1,107 @@
-const express = require('express'),
-    app = express(),
-    bodyParser = require('body-parser'),
-    jwt = require('jsonwebtoken'),
-    users = require('../database').userDatabase;
+const express = require('express');
+const router = express.Router();
+const db = require('../database');
 
-const host = '127.0.0.1';
-const port = 3000;
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+const config = require('../config');
 
-const tokenKey = '1a2b-3c4d-5e6f-7g8h';
 
-var router = express.Router();
+const passport = require('passport');
+const passportJWT = require('passport-jwt');
+const ExtractJWT = passportJWT.ExtractJwt;
+const Strategy = passportJWT.Strategy;
 
-router.use(bodyParser.json());
 
-router.get("/", function(req, res){
-    res.render("login.hbs");
+let auth = passport.authenticate('jwt', {
+    session: false
 });
+const params = {
+    secretOrKey: config.secret,
+    jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken()
+};
 
 
-router.use((req, res, next) => {
-    if(req.headers.authorization){
-        jwt.verify(req.headers.authorization.split(' ')[1], tokenKey, (err, payload) => {
-            if(err)
-                next();
-            else if(payload){
-                for(let user of users){
-                    if(user.id === payload.id){
-                        req.user = user;
-                        next();
-                    }
-                }
-
-                if(!req.user) next();
+passport.use('jwt',new Strategy(params, (payload, done) => {
+    console.log(payload.idUser);
+    db.userDatabase.findByPk(payload.id)
+        .then(user => {
+            console.log(payload.idUser);
+            console.log(user.idUser + "   *****");
+            if(user){
+                return done(null, {
+                    id: user.id,
+                    username: user.username,
+                });
             }
-        });
-    }
+            return done(null, false);
+        }).catch(err => console.error(err));
 
-    next();
+}));
+
+
+
+router.get('/', (req, res)=> {
+    res.render('login.hbs', { title: 'Pet Care API' });
 });
 
 router.post('/', (req, res) => {
-    for(let user of users){
-        if(req.body.login === user.login && req.body.password === user.password){
-            return res.status(200).json({
-                id: user.id,
-                login: user.login,
-                token: jwt.sign({id: user.id}, tokenKey)
-            });
+    const errors = {};
+    const username = req.body.login
+    const password = req.body.password;
+
+    db.userDatabase.findOne({ where: { login: username } }).then(data=> {
+        let user = data;
+        if (!user) {
+            errors.message = "No Account Found";
+            return res.status(400).json(errors);
         }
-    }
+        let isMatch = password === user.password;
 
-    return res.status(404).json({message: 'User not found'});
+        console.log(username + " - " + password)
+        console.log(user.login + " - " + user.password)
+
+        if (!isMatch) {
+            errors.message = "Password is incorrect";
+            return res.status(400).json(errors);
+        }
+        const payload = {
+            id: user._id,
+            username: user.username
+        };
+        let token = jwt.sign(payload, config.secret, { expiresIn: 36000 });
+
+        // return 500 if token is incorrect
+        if (!token) {
+            return res.status(500)
+                .json({ error: "Error signing token",
+                    raw: err });
+        }
+
+        return res.json({
+            success: true,
+            token: `Bearer ${token}` });
+    });
+
+});
+// router.get('/me', passport.authenticate('jwt', {session: false}), async function(req, res, next) {
+//     const username = req.user.username;
+//     const dbUser = await User.findOne({ username });
+//     res.status(200).json(dbUser);
+// });
+router.get('/me', passport.authenticate('jwt', {session: false}), async function(req, res, next) {
+    const username = "klemanjar0";
+    console.log(username);
+    db.userDatabase.findOne({where: {login: username} }).then(data=>{
+        res.status(200).json(data);
+    });
+});
+router.get('/user/:login', auth, function(req, res) {
+    const username = req.params.login;
+    db.userDatabase.findOne({where: {login: username} }).then(data=>{
+        res.status(200).json(data);
+    });
 });
 
-router.get('/user', (req, res) => {
-    if(req.user)
-        return res.status(200).json(req.user);
-    else
-        return res.status(401).json({message: 'Not authorized'});
-});
 
 module.exports = router;
