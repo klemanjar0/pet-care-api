@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Login</title>
+    <meta charset="utf-8" />
+    <link href="./public/stylesheets/style.css" rel="stylesheet">
+</head>
+<body>
+<ul class="menu-main">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/users" class="current">Users</a></li>
+    <li><a href="/login">Login</a></li>
+</ul>
+<h1>change pass</h1>
+<form action="/users/{{user.login}}/update-password" method="POST">
+    <label>change pass</label><br>
+    <label>Password</label><br>
+    <input name="oldpassword" class="field"/><br><br>
+    <label>New Password</label><br>
+    <input name="password" class="field"/><br><br>
+    <input type="submit" value="Отправить" />
+
+</form>
+
+</body>
+
+<style>
+    body {
+        padding: 50px;
+        font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    }
+
+    a {
+        color: #00B7FF;
+    }
+    body {
+        padding: 50px;
+        font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+        background-color: antiquewhite;
+    }
+</style>
+<html>
