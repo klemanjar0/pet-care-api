@@ -18,7 +18,7 @@ try {
     console.error('Unable to connect to the database:', error);
 }
 
-var database = sequelize.define('users', {
+var userDatabase = sequelize.define('users', {
     idUser: {
         allowNull: false,
         autoIncrement: true,
@@ -53,4 +53,4 @@ sequelize
         console.log('An error occurred while creating the table:', err);
     });
 
-module.exports = database;
+module.exports.userDatabase = userDatabase;

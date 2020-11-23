@@ -2,7 +2,7 @@ const express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
     jwt = require('jsonwebtoken'),
-    users = require('./users')(usersdb);
+    users = require('../database').userDatabase;
 
 const host = '127.0.0.1';
 const port = 3000;
@@ -12,6 +12,11 @@ const tokenKey = '1a2b-3c4d-5e6f-7g8h';
 var router = express.Router();
 
 router.use(bodyParser.json());
+
+router.get("/", function(req, res){
+    res.render("login.hbs");
+});
+
 
 router.use((req, res, next) => {
     if(req.headers.authorization){
@@ -34,7 +39,7 @@ router.use((req, res, next) => {
     next();
 });
 
-router.post('/auth', (req, res) => {
+router.post('/', (req, res) => {
     for(let user of users){
         if(req.body.login === user.login && req.body.password === user.password){
             return res.status(200).json({
@@ -54,3 +59,5 @@ router.get('/user', (req, res) => {
     else
         return res.status(401).json({message: 'Not authorized'});
 });
+
+module.exports = router;
