@@ -9,6 +9,7 @@ var fs = require("fs");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var loginRouter = require('./routes/login');
 
 var app = express();
 var jsonParser = bodyParser.json();
@@ -37,20 +38,6 @@ app.set("view engine", "hbs");
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-/*
-app.use(function(req, res, next){
-    res.status(404);
-    console.log('Not found URL: %s',req.url);
-    res.send({ error: 'Not found' });
-    return;
-});
-
-app.use(function(req, res, next, err){
-    res.status(err.status || 500);
-    console.log('Internal error(%d): %s',res.statusCode,err.message);
-    res.send({ error: err.message });
-    return;
-});
-*/
+app.use('/login', loginRouter);
 
 module.exports = app;

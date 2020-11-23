@@ -86,7 +86,7 @@ router.post("/create", urlencodedParser, function (req, res) {
   const body1 = req.body.body;
 
   usersdb.create({ login: login1, password: password1, name: name1, body: body1}).then(()=>{
-    res.redirect("/");
+    res.redirect("/users");
   }).catch(err=>console.log(err));
 
 });
@@ -137,3 +137,4 @@ router.get('/user/:login', function(req, res) {
 
 
 module.exports = router;
+

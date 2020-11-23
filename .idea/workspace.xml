@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="7feac9d5-f94e-4401-8284-8e23f03266ed" name="Default Changelist" comment="v2020.11.19" />
+    <list default="true" id="7feac9d5-f94e-4401-8284-8e23f03266ed" name="Default Changelist" comment="v2020.11.20">
+      <change afterPath="$PROJECT_DIR$/database.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/create.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/create.hbs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,8 +40,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -49,6 +79,8 @@
       <option name="presentableId" value="Default" />
       <updated>1605792622688</updated>
       <workItem from="1605792623858" duration="16988000" />
+      <workItem from="1605872890521" duration="2660000" />
+      <workItem from="1606146482906" duration="3210000" />
     </task>
     <task id="LOCAL-00001" summary="v2020.11.19">
       <created>1605820959808</created>
@@ -64,21 +96,48 @@
       <option name="project" value="LOCAL" />
       <updated>1605821029856</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="v2020.11.20">
+      <created>1605872930322</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1605872930322</updated>
+    </task>
+    <task id="LOCAL-00004" summary="v2020.11.20">
+      <created>1605872966439</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1605872966439</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="v2020.11.19" />
-    <option name="LAST_COMMIT_MESSAGE" value="v2020.11.19" />
+    <MESSAGE value="v2020.11.20" />
+    <option name="LAST_COMMIT_MESSAGE" value="v2020.11.20" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="733" y="327" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605795778702">
+    <state x="733" y="327" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606147287331">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="733" y="327" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1605795778702" />
+    <state x="733" y="327" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1606147287331" />
     <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605808609917">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -87,25 +146,25 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="266" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1605820889939" />
-    <state width="1899" height="204" key="GridCell.Tab.0.bottom" timestamp="1605821159693">
+    <state width="1899" height="204" key="GridCell.Tab.0.bottom" timestamp="1606149630628">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="204" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1605821159693" />
-    <state width="1899" height="204" key="GridCell.Tab.0.center" timestamp="1605821159693">
+    <state width="1899" height="204" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1606149630628" />
+    <state width="1899" height="204" key="GridCell.Tab.0.center" timestamp="1606149630628">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="204" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1605821159693" />
-    <state width="1899" height="204" key="GridCell.Tab.0.left" timestamp="1605821159692">
+    <state width="1899" height="204" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1606149630627" />
+    <state width="1899" height="204" key="GridCell.Tab.0.left" timestamp="1606149630627">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="204" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1605821159692" />
-    <state width="1899" height="204" key="GridCell.Tab.0.right" timestamp="1605821159693">
+    <state width="1899" height="204" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1606149630627" />
+    <state width="1899" height="204" key="GridCell.Tab.0.right" timestamp="1606149630628">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="204" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1605821159693" />
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1605821032972">
+    <state width="1899" height="204" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1606149630628" />
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1605872969926">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1605821032972" />
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1605872969926" />
   </component>
 </project>

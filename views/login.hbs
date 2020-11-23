@@ -2,7 +2,7 @@
 <html>
 <head>
 
-    <title>Регистрация пользователя</title>
+    <title>Login</title>
     <meta charset="utf-8" />
     <link href="./public/stylesheets/style.css" rel="stylesheet">
 </head>
@@ -11,21 +11,17 @@
     <li><a href="/">Home</a></li>
     <li><a href="/about">About</a></li>
     <li><a href="/users" class="current">Users</a></li>
-    <li><a href="">Contact</a></li>
+    <li><a href="/login">Login</a></li>
 </ul>
-<h1>Регистрация пользователя</h1>
+<h1>Login</h1>
 <form method="POST">
-    <label>Имя</label><br>
-    <input name="name" class="field"/><br><br>
     <label>Login</label><br>
     <input name="login" class="field"/><br><br>
     <label>Password</label><br>
     <input name="password" class="field"/><br><br>
-    <label>Body</label><br>
-    <input name="body" class="field"/><br><br>
     <input type="submit" value="Отправить" />
 </form>
-<a href="/users">К списку пользователей</a>
+
 </body>
 
 <style>
