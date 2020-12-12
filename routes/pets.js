@@ -16,6 +16,14 @@ router.get('/get-all-pets', function(req, res) {
     }).catch(err=>console.log(err));
 });
 
+router.get('/user/:id/pet', function(req, res) {
+    const userId = req.params.id;
+    petsdb.findAll({where:{idUser: userId}, raw: true }).then(pets=>{
+        console.log(pets);
+        res.send(pets);
+    }).catch(err=>console.log(err));
+});
+
 router.post("/create", urlencodedParser, function (req, res) {
 
     if(!req.body) return res.sendStatus(400);

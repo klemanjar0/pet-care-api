@@ -21,6 +21,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
 var petsRouter = require('./routes/pets');
+var samplesRouter = require('./routes/sample');
 
 var app = express();
 var jsonParser = bodyParser.json();
@@ -50,4 +51,5 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', loginRouter);
 app.use('/pets', petsRouter);
+app.use('/sample', samplesRouter);
 module.exports = app;

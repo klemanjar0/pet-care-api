@@ -19,18 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7feac9d5-f94e-4401-8284-8e23f03266ed" name="Default Changelist" comment="v2020.11.20">
-      <change afterPath="$PROJECT_DIR$/database.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/login.js" afterDir="false" />
+    <list default="true" id="7feac9d5-f94e-4401-8284-8e23f03266ed" name="Default Changelist" comment="v2020.12.12">
+      <change afterPath="$PROJECT_DIR$/controllers/dashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/sample.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/create.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/create.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/pets.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/pets.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,15 +53,17 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="12.18.2" />
-    <property name="javascript.nodejs.core.library.typings.version" value="12.19.5" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.15.1" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.14.12" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -80,7 +77,9 @@
       <updated>1605792622688</updated>
       <workItem from="1605792623858" duration="16988000" />
       <workItem from="1605872890521" duration="2660000" />
-      <workItem from="1606146482906" duration="3210000" />
+      <workItem from="1606146482906" duration="23595000" />
+      <workItem from="1606208347326" duration="692000" />
+      <workItem from="1607782219499" duration="5226000" />
     </task>
     <task id="LOCAL-00001" summary="v2020.11.19">
       <created>1605820959808</created>
@@ -110,7 +109,42 @@
       <option name="project" value="LOCAL" />
       <updated>1605872966439</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="v2020.11.23">
+      <created>1606149735185</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1606149735185</updated>
+    </task>
+    <task id="LOCAL-00006" summary="v2020.11.23">
+      <created>1606150516706</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1606150516706</updated>
+    </task>
+    <task id="LOCAL-00007" summary="v2020.11.23">
+      <created>1606162938519</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1606162938519</updated>
+    </task>
+    <task id="LOCAL-00008" summary="v2020.11.24">
+      <created>1606172471834</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1606172471834</updated>
+    </task>
+    <task id="LOCAL-00009" summary="v2020.11.24">
+      <created>1606172482238</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1606172482238</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,40 +165,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="v2020.11.19" />
     <MESSAGE value="v2020.11.20" />
-    <option name="LAST_COMMIT_MESSAGE" value="v2020.11.20" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="733" y="327" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606147287331">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="733" y="327" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1606147287331" />
-    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605808609917">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1605808609917" />
-    <state x="740" y="266" key="FileChooserDialogImpl" timestamp="1605820889939">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="740" y="266" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1605820889939" />
-    <state width="1899" height="204" key="GridCell.Tab.0.bottom" timestamp="1606149630628">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1899" height="204" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1606149630628" />
-    <state width="1899" height="204" key="GridCell.Tab.0.center" timestamp="1606149630628">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1899" height="204" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1606149630627" />
-    <state width="1899" height="204" key="GridCell.Tab.0.left" timestamp="1606149630627">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1899" height="204" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1606149630627" />
-    <state width="1899" height="204" key="GridCell.Tab.0.right" timestamp="1606149630628">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state width="1899" height="204" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1606149630628" />
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1605872969926">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1605872969926" />
+    <MESSAGE value="v2020.11.23" />
+    <MESSAGE value="v2020.11.24" />
+    <MESSAGE value="v2020.12.12" />
+    <option name="LAST_COMMIT_MESSAGE" value="v2020.12.12" />
   </component>
 </project>

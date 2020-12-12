@@ -6,7 +6,7 @@ const doDropTable = false;
 const { Sequelize, DataTypes } = require('sequelize');
 const urlencodedParser = bodyParser.urlencoded({extended: false});
 
-const sequelize = new Sequelize("userspetcare", "root", "", {
+const sequelize = new Sequelize("userspetcare", "root", "123456", {
     dialect: "mysql",
     host: "localhost"
 });
